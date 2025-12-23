@@ -1,0 +1,11 @@
+show=drun
+prompt=Apps
+insensitive=true
+allow_images=true
+term=kitty
+width=450
+height=400
+location=center
+columns=1
+lines=10
+no_actions=true
