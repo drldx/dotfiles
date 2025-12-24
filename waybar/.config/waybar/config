@@ -1,0 +1,81 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": [
+	"clock",
+        "sway/mode"
+    ],
+    "modules-center": [
+	"sway/workspaces"
+    ],
+    "modules-right": [
+        "custom/net_speed",
+        "pulseaudio",
+        "cpu",
+        "memory",
+        "battery",
+        "network"
+    ],
+    "sway/workspaces": {
+        "format": "{name}",
+        "all-outputs": true,
+        "format-icons": {
+            "active": "",
+            "default": "",
+            "urgent": ""
+        }
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "default": [
+            "", "", ""]
+        },
+    },
+    "network": {
+        "interval": 1,
+        "format-wifi": "  {essid}",
+        "format-ethernet": "{ifname} ↓ {bandwidthDownBits} ↑ {bandwidthUpBits}",
+        "format-disconnected": "Disconnected",
+        "tooltip-format": "{ifname}\nIP: {ipaddr}\nDown: {bandwidthDownBits}\nUp: {bandwidthUpBits}"
+    },
+    
+    "custom/net_speed": {
+        "exec": "~/.config/waybar/net_speed.sh",
+        "interval": 1
+    }
+    ,
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 1
+    },
+    "memory": {
+        "format": " {percentage}%",
+        "interval": 1
+    },
+    "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "states": {
+        "critical": 15,
+        "warning": 30,
+        "good": 80
+        }
+    },
+
+    "clock": {
+        "format":" {:%a, %d %b  %H:%M}", 
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    }
+}

@@ -1,0 +1,80 @@
+* {
+    border-radius: 0px;
+    font-family: "Hack Nerd Font"; 
+    font-size: 14px;
+    min-height: 20px;
+    font-weight: bold;
+}
+
+#waybar {
+    background: transparent; 
+    color: #f8f8f2; 
+}
+
+#workspaces button {
+    padding: 0 5px;
+    margin: 0 5px;
+    background: #353644;
+    border-radius: 10px;
+    color: #bd93f9;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    color: #f5bde6;
+}
+
+#workspaces button.urgent {
+    color: #ff5555;
+    border-bottom: 3px solid #ff5555;
+}
+
+#mode {
+    background: #ff5555;
+    padding: 0 10px;
+    margin: 0 5px;
+}
+
+#pulseaudio, #network, #cpu, #memory, #battery, #clock, #tray, #custom-net_speed {
+    padding: 0 10px;
+    margin: 0 5px;
+    background: #353644;
+    border-radius: 8px;
+    color: #cdd6f4;
+}
+
+/* Hover effects */
+#workspaces button:hover {
+    background: #44475a;
+}
+#pulseaudio{
+    color: #f9e2af;
+}
+#custom-net_speed{
+    color: #c6a0f6;
+}
+#memory{
+    color: #85c1dc;
+}
+#cpu{
+    color: #da9595;
+}
+#clock{
+    color: #f2cdcd;
+}
+
+#battery {
+    color: #cdd6f4;
+}
+
+#battery.warning {
+    color: #fab387;
+}
+
+#battery.critical {
+    color: #f38ba8;
+}
+
+#battery.good {
+    color: #a6e3a1;
+}
