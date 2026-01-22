@@ -23,7 +23,6 @@
     "modules": [
 	"break",
         "break",
-        "break",
 	{
             "type": "custom",
             "format": "\u001b[90m  \u001b[37m  \u001b[32m  \u001b[36m  \u001b[34m  \u001b[32m  \u001b[36m  \u001b[37m"
