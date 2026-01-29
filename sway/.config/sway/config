@@ -271,7 +271,12 @@ include /etc/sway/config.d/*
 exec gammastep -O 5700 
 bindsym $mod+n exec "pgrep gammastep && pkill gammastep || gammastep -O 5500"
 
-exec_always --no-startup-id sh -c "pkill swaybg; swaybg -i $(find ~/Pictures/Wallpapers -type f | shuf -n 1) -m fill"
+#without symlink
+#exec_always --no-startup-id sh -c "pkill swaybg; swaybg -i $(find ~/Pictures/Wallpapers -type f | shuf -n 1) -m fill"
+
+#with symlinks
+#exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/castle.png -m fill"
+exec_always --no-startup-id sh -c 'FILE=$(ls "$HOME/Pictures/Wallpapers" | shuf -n 1); sleep 0.1; pkill swaybg; swaybg -i "$HOME/Pictures/Wallpapers/$FILE" -m fill'
 
 #stand up alert script 
 #exec ~/scripts/break-reminder.sh
