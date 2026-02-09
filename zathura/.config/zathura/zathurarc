@@ -1,0 +1,5 @@
+#include themes/catppuccin-mocha
+include themes/nord
+
+set recolor-keephue false
+
