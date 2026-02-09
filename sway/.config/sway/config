@@ -278,7 +278,7 @@ bindsym $mod+n exec "pgrep gammastep && pkill gammastep || gammastep -O 5500"
 #exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/castle.png -m fill"
 exec_always --no-startup-id sh -c 'FILE=$(ls "$HOME/Pictures/Wallpapers" | shuf -n 1); sleep 0.1; pkill swaybg; swaybg -i "$HOME/Pictures/Wallpapers/$FILE" -m fill'
 
-for_window [app_id="org.pwmt.zathura"] opacity 0.95
+for_window [app_id="org.pwmt.zathura"] opacity 0.92
 
 
 #stand up alert script 

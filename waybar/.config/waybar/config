@@ -5,14 +5,15 @@
     "height": 30,
     "spacing": 4,
     "modules-left": [
-	"clock",
-        "sway/mode"
+	      "clock",
+        "sway/mode",
+        "sway/workspaces",
     ],
     "modules-center": [
-	"sway/workspaces"
     ],
     "modules-right": [
         "custom/net_speed",
+        "backlight",
         "pulseaudio",
         "cpu",
         "memory",
@@ -28,6 +29,21 @@
             "urgent": ""
         }
     },
+    "sway/window": {
+        "format": "{title}",
+        "max-length": 30,
+        "rewrite": {
+          "(.*) — Mozilla Firefox": "  $1",
+          "(.*) - Visual Studio Code": "󰨞  $1"
+        }
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-muted": " Muted",
@@ -71,7 +87,7 @@
     },
 
     "clock": {
-        "format":" {:%a, %d %b  %H:%M}", 
+        "format":"󰃭 {:%a %d %b  %H:%M}", 
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "tray": {

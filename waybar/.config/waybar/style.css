@@ -12,22 +12,34 @@
 }
 
 #workspaces button {
-    padding: 0 5px;
-    margin: 0 5px;
-    background: #353644;
-    border-radius: 10px;
-    color: #bd93f9;
-    border-bottom: 3px solid transparent;
+  padding: 3px 3px;
+  margin: 3px;
+  border-radius: 6px;
+  color: #777;
 }
 
 #workspaces button.focused {
-    color: #f5bde6;
+  color: #fff;
 }
 
-#workspaces button.urgent {
-    color: #ff5555;
-    border-bottom: 3px solid #ff5555;
-}
+
+/* #workspaces button { */
+/*     padding: 0 5px; */
+/*     margin: 0 5px; */
+/*     background: #353644; */
+/*     border-radius: 10px; */
+/*     color: #bd93f9; */
+/*     border-bottom: 3px solid transparent; */
+/* } */
+/**/
+/* #workspaces button.focused { */
+/*     color: #f5bde6; */
+/* } */
+/**/
+/* #workspaces button.urgent { */
+/*     color: #ff5555; */
+/*     border-bottom: 3px solid #ff5555; */
+/* } */
 
 #mode {
     background: #ff5555;
@@ -35,9 +47,17 @@
     margin: 0 5px;
 }
 
-#pulseaudio, #network, #cpu, #memory, #battery, #clock, #tray, #custom-net_speed {
+#backlight, 
+#pulseaudio, 
+#network, 
+#cpu, 
+#memory, 
+#battery, 
+#clock, 
+#tray, 
+#custom-net_speed {
     padding: 0 10px;
-    margin: 0 5px;
+    margin: 0 3px;
     background: #353644;
     border-radius: 8px;
     color: #cdd6f4;
@@ -51,6 +71,7 @@
     color: #f9e2af;
 }
 #custom-net_speed{
+    background: none;
     color: #c6a0f6;
 }
 #memory{
