@@ -1,0 +1,43 @@
+# --- Rosé Pine Main for Zathura ---
+
+# Use the JetBrains Mono Nerd Font Mono you just set up
+set font "JetBrainsMono NF Mono 11"
+
+# Basic Colors
+set default-bg                  "#191724" # Base
+set default-fg                  "#e0def4" # Text
+
+# Statusbar (The bottom bar)
+set statusbar-bg                "#1f1d2e" # Surface
+set statusbar-fg                "#908caa" # Subtle
+
+# Inputbar (Where you type commands)
+set inputbar-bg                 "#191724" # Base
+set inputbar-fg                 "#ebbcba" # Rose (Pinkish)
+
+# Notification Colors
+set notification-bg             "#1f1d2e"
+set notification-fg             "#c4a7e7" # Iris (Purple)
+set notification-error-bg       "#1f1d2e"
+set notification-error-fg       "#eb6f92" # Love (Red)
+set notification-warning-bg     "#1f1d2e"
+set notification-warning-fg     "#f6c177" # Gold (Yellow)
+
+# Highlighting / Selection
+set highlight-color             "#31748f" # Pine (Blue-Green)
+set highlight-active-color      "#ebbcba" # Rose
+
+# Completion Menu (Tab-complete)
+set completion-bg               "#26233a" # Overlay
+set completion-fg               "#908caa"
+set completion-highlight-bg     "#31748f"
+set completion-highlight-fg     "#e0def4"
+
+# ---- Recolor Mode (The "Dark Mode" Magic) ----
+# This makes the actual PDF pages match the theme
+set recolor                     "true"
+set recolor-lightcolor          "#191724" # Background of the PDF
+set recolor-darkcolor           "#e0def4" # Text of the PDF
+
+# Keep original colors for images/logos if possible
+set recolor-keephue             "true"

@@ -8,16 +8,13 @@ font_size        14.0
 # Cursor
 cursor_shape     block
 #cursor_blink     on
-cursor #ffffff
-cursor_text_color #191724
-shell_integration enabled
 
 # Window appearance
-background_opacity 0.9 
-# background #1e1e2e
-# foreground #cdd6f4
-# selection_foreground #1e1e2e
-# selection_background #cdd6f4
+background_opacity 0.95 
+background #1e1e2e
+foreground #cdd6f4
+selection_foreground #1e1e2e
+selection_background #cdd6f4
 
 # Tabs and title bar
 tab_bar_edge top
@@ -38,9 +35,3 @@ initial_window_width  40c
 initial_window_height 24c
 
 disable_ligatures never
-
-
-# BEGIN_KITTY_THEME
-# Rosé Pine
-include current-theme.conf
-# END_KITTY_THEME
