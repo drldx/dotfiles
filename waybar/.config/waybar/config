@@ -87,7 +87,7 @@
     },
 
     "clock": {
-        "format":"󰃭 {:%a %d %b  %H:%M}", 
+        "format":"󰃭 {:%a %d %b | %I:%M %p }", 
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "tray": {

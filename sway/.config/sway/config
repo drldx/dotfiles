@@ -276,12 +276,11 @@ bindsym $mod+n exec "pgrep gammastep && pkill gammastep || gammastep -O 5500"
 #exec_always --no-startup-id sh -c "pkill swaybg; swaybg -i $(find ~/Pictures/Wallpapers -type f | shuf -n 1) -m fill"
 
 #with symlinks
-#exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/castle.png -m fill"
+#exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/green_forest.jpg -m fill"
 exec_always --no-startup-id sh -c 'FILE=$(ls "$HOME/Pictures/Wallpapers" | shuf -n 1); sleep 0.1; pkill swaybg; swaybg -i "$HOME/Pictures/Wallpapers/$FILE" -m fill'
 
-exec_always {
-    gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'
-}
+#gtk font 
+exec gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'
 
 for_window [app_id="org.pwmt.zathura"] opacity 0.92
 

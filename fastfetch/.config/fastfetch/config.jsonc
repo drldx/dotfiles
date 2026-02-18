@@ -13,7 +13,7 @@
     	"type": "kitty",
     	"height": 14,
     	"padding": {
-    		"top": 4,
+    		"top": 3,
         "right": 3
     	}
     },
@@ -28,7 +28,6 @@
             "format": "\u001b[90m  \u001b[37m  \u001b[32m  \u001b[35m  \u001b[34m  \u001b[32m  \u001b[38m  \u001b[37m"
         },
 	"break",
-        "break",
         {
             "type": "os",
             "key": " ",
@@ -84,12 +83,12 @@
             "key": "󰢮 ",
             "keyColor": "34",
         }, 
-        {
-            "type": "disk",
-            "key": "󰋊 ",
-            "keyColor": "34",
-            "format": "{1} / {2}"
-        },
+        // {
+        //     "type": "disk",
+        //     "key": "󰋊 ",
+        //     "keyColor": "34",
+        //     "format": "{1} / {2}"
+        // },
         {
             "type": "uptime",
             "key": " ",

@@ -1,5 +1,6 @@
 #include themes/catppuccin-mocha
-include themes/rosepine
+#include themes/rosepine
+include themes/nord
 
 set recolor-keephue false
 set font "JetBrainsMono Nerd Font 11"

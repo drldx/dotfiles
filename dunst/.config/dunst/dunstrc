@@ -2,9 +2,9 @@
     monitor = 0
     follow = mouse
     width = 300
-    offset = 10x40
+    offset = 10x10
     origin = top-right
-    font = JetBrainsMono Nerd Font 13
+    font = JetBrainsMono Nerd Font 12
     format = "<b>%s</b>\n%b"
     alignment = left
     transparency = 10
@@ -12,7 +12,7 @@
     separator_color = frame
     padding = 10
     horizontal_padding = 10
-    corner_radius = 12
+    corner_radius = 10
     gap_size = 10
     word_wrap = yes
     icon_position = left
