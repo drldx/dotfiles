@@ -276,7 +276,7 @@ bindsym $mod+n exec "pgrep gammastep && pkill gammastep || gammastep -O 5500"
 #exec_always --no-startup-id sh -c "pkill swaybg; swaybg -i $(find ~/Pictures/Wallpapers -type f | shuf -n 1) -m fill"
 
 #with symlinks
-#exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/green_forest.jpg -m fill"
+#exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/pool_women.png -m fill"
 exec_always --no-startup-id sh -c 'FILE=$(ls "$HOME/Pictures/Wallpapers" | shuf -n 1); sleep 0.1; pkill swaybg; swaybg -i "$HOME/Pictures/Wallpapers/$FILE" -m fill'
 
 #gtk font 
