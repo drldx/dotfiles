@@ -1,0 +1,8 @@
+find the version for download 
+check the version in official github repo named downloads
+we can find the latest and previous versions there
+look for the assest session of the required version
+download the x86 linux tar.gz file 
+follow the extraction code form the official nvim page:
+
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz

@@ -16,14 +16,14 @@ set $right l
 
 #gaps
 gaps inner 3
-smart_gaps off 
+smart_gaps off
 
 #font
 #font pango:Hack Nerd Font 13
-font pango:JetBrainsMono Nerd Font 13
+font pango:JetBrainsMono Nerd Font 12
 
 #border
-default_border pixel 3 
+default_border pixel 2
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -103,6 +103,8 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
     #Start pomodoro app
     bindsym $mod+p exec gnome-pomodoro 
+
+    bindsym $mod+m exec signal-desktop
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -276,8 +278,8 @@ bindsym $mod+n exec "pgrep gammastep && pkill gammastep || gammastep -O 5500"
 #exec_always --no-startup-id sh -c "pkill swaybg; swaybg -i $(find ~/Pictures/Wallpapers -type f | shuf -n 1) -m fill"
 
 #with symlinks
-exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/magenta-sky.jpg -m fill"
-#exec_always --no-startup-id sh -c 'FILE=$(ls "$HOME/Pictures/Wallpapers" | shuf -n 1); sleep 0.1; pkill swaybg; swaybg -i "$HOME/Pictures/Wallpapers/$FILE" -m fill'
+#exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/grass_valley.jpg -m fill"
+exec_always --no-startup-id sh -c 'FILE=$(ls "$HOME/Pictures/Wallpapers" | shuf -n 1); sleep 0.1; pkill swaybg; swaybg -i "$HOME/Pictures/Wallpapers/$FILE" -m fill'
 
 #gtk font 
 exec gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'
