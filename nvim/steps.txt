@@ -1,8 +1,42 @@
-find the version for download 
-check the version in official github repo named downloads
-we can find the latest and previous versions there
-look for the assest session of the required version
-download the x86 linux tar.gz file 
-follow the extraction code form the official nvim page:
 
-sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+Find the version for download 
+Check the version in official github repo named downloads
+We can find the latest and previous versions there
+Look for the assest session of the required version
+Download the x86 linux tar.gz file 
+
+Follow the extraction code form the official site :
+
+  sudo rm -rf /opt/nvim-linux-x86_64
+  sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+
+CleanUp;
+
+#Remove Neovim executable/symlink
+  sudo rm -f /usr/local/bin/nvim
+
+#Remove manual installs in /opt
+  sudo rm -rf /opt/nvim*
+  sudo rm -rf /usr/local/nvim*
+
+#Remove AppImage copies if any
+  rm -f ~/.local/bin/nvim*
+  rm -f ~/Downloads/nvim*
+
+#Remove Neovim config
+  rm -rf ~/.config/nvim
+
+#Remove plugins and installed packages
+  rm -rf ~/.local/share/nvim
+
+#Remove cache
+  rm -rf ~/.cache/nvim
+
+#Remove state/session/shada files
+  rm -rf ~/.local/state/nvim
+
+#Remove extra local data
+  rm -rf ~/.local/share/nvim-data
+
+#Verify cleanup
+  which nvim
