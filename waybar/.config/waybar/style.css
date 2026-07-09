@@ -1,7 +1,7 @@
 * {
     border-radius: 0px;
     font-family: "JetBrainsMono Nerd Font"; 
-    font-size: 14px;
+    font-size: 12px;
     min-height: 20px;
     font-weight: bold;
 }
@@ -12,8 +12,8 @@
 }
 
 #workspaces button {
-  padding: 3px 3px;
-  margin: 3px;
+  padding: 1px 1px;
+  margin: 1px;
   border-radius: 6px;
   color: #777;
 }
@@ -56,8 +56,8 @@
 #clock, 
 #tray, 
 #custom-net_speed {
-    padding: 0 10px;
-    margin: 0 3px;
+    padding: 0 8px;
+    margin: 2px 2px;
     background: #353644;
     border-radius: 50px;
     color: #cdd6f4;
