@@ -264,7 +264,8 @@ client.focused_inactive #434c5e    #2e3440    #d8dee9    #483e48
 client.urgent           #bf616a    #3b4252    #eceff4    #483e48
 
 
-bindsym Print exec grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y%m%d%H%M%S_grim.png)
+#bindsym Print exec grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y%m%d%H%M%S_grim.png)
+bindsym Print exec sh -c 'grimshot savecopy area "$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png" && notify-send "Screenshot captured!"'
 
 exec waybar
 bindsym $mod+Escape exit
