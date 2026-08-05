@@ -258,10 +258,10 @@ bindsym $mod+r mode "resize"
 #}
 #                                  (active)
 # Colors:                border   background   text     indicator
-client.focused          #27232b    #483e48    #eceff4    #483e48
-client.unfocused        #4c566a    #2e3440    #d8dee9    #483e48
-client.focused_inactive #434c5e    #2e3440    #d8dee9    #483e48
-client.urgent           #bf616a    #3b4252    #eceff4    #483e48
+client.focused          #27232b    #4c566a    #eceff4    #4c566a
+client.unfocused        #4c566a    #2e3440    #d8dee9    #4c566a
+client.focused_inactive #434c5e    #2e3440    #d8dee9    #4c566a
+client.urgent           #bf616a    #3b4252    #eceff4    #4c566a
 
 
 #bindsym Print exec grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y%m%d%H%M%S_grim.png)
@@ -285,14 +285,13 @@ bindsym $mod+n exec "pgrep gammastep && pkill gammastep || gammastep -O 5500"
 #exec_always --no-startup-id sh -c "pkill swaybg; swaybg -i $(find ~/Pictures/Wallpapers -type f | shuf -n 1) -m fill"
 
 #with symlinks
-#exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/snow_car.png -m fill"
-exec_always --no-startup-id sh -c 'FILE=$(ls "$HOME/Pictures/Wallpapers" | shuf -n 1); sleep 0.1; pkill swaybg; swaybg -i "$HOME/Pictures/Wallpapers/$FILE" -m fill'
+exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/rose_sky.jpg -m fill"
+#exec_always --no-startup-id sh -c 'FILE=$(ls "$HOME/Pictures/Wallpapers" | shuf -n 1); sleep 0.1; pkill swaybg; swaybg -i "$HOME/Pictures/Wallpapers/$FILE" -m fill'
 
 #gtk font 
 exec gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'
 
 for_window [app_id="org.pwmt.zathura"] opacity 0.92
-
 
 
 
