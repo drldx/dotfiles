@@ -9,16 +9,19 @@
         "sway/mode",
         "sway/workspaces",
     ],
+
     "modules-center": [
     ],
+
     "modules-right": [
         "custom/net_speed",
+        "custom/pomodoro",
         "backlight",
         "pulseaudio",
         "cpu",
         "memory",
         "battery",
-        "network"
+        "network",
     ],
     "sway/workspaces": {
         "format": "{name}",
@@ -63,8 +66,17 @@
     "custom/net_speed": {
         "exec": "~/.config/waybar/net_speed.sh",
         "interval": 1
-    }
-    ,
+    },
+
+    "custom/pomodoro": {
+    "exec": "~/.config/waybar/scripts/pomodoro.sh print",
+    "return-type": "json",
+    "signal": 8,
+    "interval": "once",
+    "on-click": "~/.config/waybar/scripts/pomodoro.sh toggle",
+    "on-click-right": "~/.config/waybar/scripts/pomodoro.sh reset"
+    },
+
     "cpu": {
         "format": " {usage}%",
         "interval": 1

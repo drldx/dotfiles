@@ -63,6 +63,18 @@
     color: #cdd6f4;
 }
 
+#custom-pomodoro {
+    padding: 0 5px;
+    color: #ebdbb2;
+}
+#custom-pomodoro.running {
+    color: #a6e3a1;
+}
+#custom-pomodoro.paused {
+    color: #fabd2f;
+}
+
+
 /* Hover effects */
 #workspaces button:hover {
     background: #44475a;

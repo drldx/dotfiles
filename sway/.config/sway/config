@@ -72,6 +72,9 @@ include /etc/sway/config-vars.d/*
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+#notification bug clear code
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
 ### Key bindings
 
 # Brightness control using brightnessctl
@@ -285,8 +288,8 @@ bindsym $mod+n exec "pgrep gammastep && pkill gammastep || gammastep -O 5500"
 #exec_always --no-startup-id sh -c "pkill swaybg; swaybg -i $(find ~/Pictures/Wallpapers -type f | shuf -n 1) -m fill"
 
 #with symlinks
-exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/rose_sky.jpg -m fill"
-#exec_always --no-startup-id sh -c 'FILE=$(ls "$HOME/Pictures/Wallpapers" | shuf -n 1); sleep 0.1; pkill swaybg; swaybg -i "$HOME/Pictures/Wallpapers/$FILE" -m fill'
+#exec_always "pkill swaybg; swaybg -i ~/Pictures/Wallpapers/rose_sky.jpg -m fill"
+exec_always --no-startup-id sh -c 'FILE=$(ls "$HOME/Pictures/Wallpapers" | shuf -n 1); sleep 0.1; pkill swaybg; swaybg -i "$HOME/Pictures/Wallpapers/$FILE" -m fill'
 
 #gtk font 
 exec gsettings set org.gnome.desktop.interface font-name 'JetBrainsMono Nerd Font 11'
