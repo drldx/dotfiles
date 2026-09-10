@@ -3,13 +3,12 @@
 STATE_FILE="/tmp/waybar_pomodoro_state"
 TIME_FILE="/tmp/waybar_pomodoro_time"
 END_FILE="/tmp/waybar_pomodoro_end"
-MODE_FILE="/tmp/waybar_pomodoro_mode"   # work, short_break, long_break
+MODE_FILE="/tmp/waybar_pomodoro_mode"   # work, break
 COUNT_FILE="/tmp/waybar_pomodoro_count" # completed work sessions count
 
 # Durations in seconds
-DUR_WORK=5  # 25 mins
-DUR_SHORT=3 # 5 mins
-DUR_LONG=9  # 15 mins
+DUR_WORK=1500 # 25 mins
+DUR_BREAK=300 # 5 mins
 
 # Initialize defaults if not present
 [[ ! -f "$STATE_FILE" ]] && echo "stopped" >"$STATE_FILE"
@@ -19,19 +18,26 @@ if [[ ! -f "$TIME_FILE" ]]; then
   echo "$DUR_WORK" >"$TIME_FILE"
 fi
 
+play_sound() {
+  # Try playing a standard desktop sound theme event (PulseAudio/PipeWire)
+  if command -v paplay &>/dev/null; then
+    # Try looking for a standard system sound file, fall back gracefully if missing
+    for sound in /usr/share/sounds/freedesktop/stereo/complete.oga /usr/share/sounds/freedesktop/stereo/message-new-instant.oga; do
+      if [[ -f "$sound" ]]; then
+        paplay "$sound" &>/dev/null &
+        return
+      fi
+    done
+  fi
+
+  # Fallback to standard terminal bell if paplay or sound files aren't found
+  echo -en "\a"
+}
+
 get_time_formatted() {
   local t=$(cat "$TIME_FILE")
   [ "$t" -lt 0 ] && t=0
   printf "%02d:%02d" $((t / 60)) $((t % 60))
-}
-
-get_current_duration() {
-  local mode=$(cat "$MODE_FILE")
-  case "$mode" in
-  short_break) echo "$DUR_SHORT" ;;
-  long_break) echo "$DUR_LONG" ;;
-  *) echo "$DUR_WORK" ;;
-  esac
 }
 
 case "$1" in
@@ -67,20 +73,17 @@ toggle)
           completed=$(($(cat "$COUNT_FILE") + 1))
           echo "$completed" >"$COUNT_FILE"
 
-          # Every 4th work session triggers a long break, otherwise short break
-          if [ $((completed % 4)) -eq 0 ]; then
-            echo "long_break" >"$MODE_FILE"
-            echo "$DUR_LONG" >"$TIME_FILE"
-            notify-send "Pomodoro" "Great job! Time for a Long Break." -u normal
-          else
-            echo "short_break" >"$MODE_FILE"
-            echo "$DUR_SHORT" >"$TIME_FILE"
-            notify-send "Pomodoro" "Time is up! Take a Short Break." -u normal
-          fi
+          echo "break" >"$MODE_FILE"
+          echo "$DUR_BREAK" >"$TIME_FILE"
+
+          play_sound
+          notify-send "Pomodoro" "Time is up! Take a Break." -u normal
         else
           # Break finished, switch back to work
           echo "work" >"$MODE_FILE"
           echo "$DUR_WORK" >"$TIME_FILE"
+
+          play_sound
           notify-send "Pomodoro" "Break over! Back to work." -u normal
         fi
 
@@ -123,8 +126,7 @@ print)
   # Assign icons/labels depending on current loop mode
   if [ "$state" == "running" ]; then
     case "$mode" in
-    short_break) icon="☕" ;;
-    long_break) icon="🌴" ;;
+    break) icon="☕" ;;
     *) icon="⏱" ;;
     esac
     echo "{\"text\": \"$icon $time_str\", \"class\": \"$mode running\"}"
@@ -133,8 +135,7 @@ print)
   else
     # Default display text when stopped
     case "$mode" in
-    short_break) text="☕ Break" ;;
-    long_break) text="🌴 Break" ;;
+    break) text="☕ Break" ;;
     *) text="⏱ 25:00" ;;
     esac
     echo "{\"text\": \"$text\", \"class\": \"$mode stopped\"}"
