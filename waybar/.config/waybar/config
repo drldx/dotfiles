@@ -14,7 +14,6 @@
     ],
 
     "modules-right": [
-        "custom/net_speed",
         "custom/pomodoro",
         "backlight",
         "pulseaudio",
@@ -63,10 +62,6 @@
         "tooltip-format": "{ifname}\nIP: {ipaddr}\nDown: {bandwidthDownBits}\nUp: {bandwidthUpBits}"
     },
     
-    "custom/net_speed": {
-        "exec": "~/.config/waybar/net_speed.sh",
-        "interval": 1
-    },
 
     "custom/pomodoro": {
     "exec": "~/.config/waybar/scripts/pomodoro.sh print",

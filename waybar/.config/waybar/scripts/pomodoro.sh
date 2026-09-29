@@ -77,14 +77,14 @@ toggle)
           echo "$DUR_BREAK" >"$TIME_FILE"
 
           play_sound
-          notify-send "Pomodoro" "Time is up! Take a Break." -u normal
+          notify-send "Pomodoro" "Time is up! Take a Break." -u critical
         else
           # Break finished, switch back to work
           echo "work" >"$MODE_FILE"
           echo "$DUR_WORK" >"$TIME_FILE"
 
           play_sound
-          notify-send "Pomodoro" "Break over! Back to work." -u normal
+          notify-send "Pomodoro" "Break over! Back to work." -u critical
         fi
 
         echo "stopped" >"$STATE_FILE"
